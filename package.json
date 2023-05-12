@@ -1,7 +1,7 @@
 {
   "name": "zelt-demo-form",
   "version": "0.1.0",
-  "homepage": "https://alma957.github.io/zelt-demo-form",
+  "homepage": "https://alma957.github.io/Zelt_Demo_Form/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
