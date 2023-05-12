@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/zelt-demo-form/static/css/main.07f836d8.css",
+    "main.js": "/zelt-demo-form/static/js/main.d3861537.js",
+    "static/js/787.74042393.chunk.js": "/zelt-demo-form/static/js/787.74042393.chunk.js",
+    "index.html": "/zelt-demo-form/index.html",
+    "main.07f836d8.css.map": "/zelt-demo-form/static/css/main.07f836d8.css.map",
+    "main.d3861537.js.map": "/zelt-demo-form/static/js/main.d3861537.js.map",
+    "787.74042393.chunk.js.map": "/zelt-demo-form/static/js/787.74042393.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07f836d8.css",
+    "static/js/main.d3861537.js"
+  ]
+}
