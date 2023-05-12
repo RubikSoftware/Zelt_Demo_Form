@@ -1,7 +1,7 @@
 
 
 import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Tooltip, Typography } from "@mui/material";
-import {countries,interestedIn,DemoInput, DemoErrors, InterestedIn} from "./variables"
+import {countries,interestedIn,DemoInput, DemoErrors, InterestedIn,choices,fallBackButtonName} from "./variables"
 import React, { useState } from "react";
 import Cookies, { CookieSetOptions } from 'universal-cookie';
 
@@ -9,9 +9,9 @@ export const DemoForm = (): JSX.Element => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const cookie = new Cookies()
   const choices = ['Open Account','Schedule Demo']
-  const fallBackButtonName = choices[Math.floor(Math.random()*choices.length)]
+   
   if (!cookie.get("buttonName")) {
-    
+
     cookie.set("buttonName",choices[Math.floor(Math.random() * choices.length)],{'maxAge': 604800,'path':"/",'sameSite':'none','secure':true} as CookieSetOptions)
   }
   const classes = {

@@ -28,6 +28,8 @@ export interface DemoErrors {
     companyLinkedinUrl:string,
     jobTitle:string,
 }
+export const choices = ['Open Account','Schedule Demo']
+export const fallBackButtonName = choices[Math.floor(Math.random()*choices.length)]
 export interface InterestedIn {
     onboarding:string,
     hris:string,
@@ -39,6 +41,7 @@ export interface InterestedIn {
     mdm:string,
     apps:string
 }
+
 export const interestedIn = {
     onboarding: 'Employee on/offboarding',
     hris: 'HRIS',
