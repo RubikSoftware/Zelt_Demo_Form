@@ -9,6 +9,7 @@ export const DemoForm = (): JSX.Element => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const cookie = new Cookies()
   const choices = ['Open Account','Schedule Demo']
+  const fallBackButtonName = choices[Math.floor(Math.random()*choices.length)]
   if (!cookie.get("buttonName")) {
     
     cookie.set("buttonName",choices[Math.floor(Math.random() * choices.length)],{'maxAge': 604800,'path':"/",'sameSite':'none','secure':true} as CookieSetOptions)
@@ -529,7 +530,7 @@ export const DemoForm = (): JSX.Element => {
             
           sx = {classes.Button}   
           >
-            {cookie.get("buttonName") ? cookie.get("buttonName") : choices[Math.floor(Math.random()*choices.length)]}
+            {cookie.get("buttonName") ? cookie.get("buttonName") : fallBackButtonName}
           
           </Button>
         <Typography sx = {{marginTop:subMessage!==""?"15px":"0px",color:subMessage===successMessage?"black":"red"}}>{subMessage}</Typography>
