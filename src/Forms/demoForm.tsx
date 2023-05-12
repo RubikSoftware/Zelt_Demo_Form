@@ -8,9 +8,9 @@ import Cookies, { CookieSetOptions } from 'universal-cookie';
 export const DemoForm = (): JSX.Element => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const cookie = new Cookies()
-  
+  const choices = ['Open Account','Schedule Demo']
   if (!cookie.get("buttonName")) {
-    const choices = ['Open Account','Schedule Demo']
+    
     cookie.set("buttonName",choices[Math.floor(Math.random() * choices.length)],{'maxAge': 604800,'path':"/",'sameSite':'none','secure':true} as CookieSetOptions)
   }
   const classes = {
@@ -529,7 +529,7 @@ export const DemoForm = (): JSX.Element => {
             
           sx = {classes.Button}   
           >
-            {cookie.get("buttonName")}
+            {cookie.get("buttonName") ? cookie.get("buttonName") : choices[Math.floor(Math.random()*choices.length)]}
           
           </Button>
         <Typography sx = {{marginTop:subMessage!==""?"15px":"0px",color:subMessage===successMessage?"black":"red"}}>{subMessage}</Typography>
