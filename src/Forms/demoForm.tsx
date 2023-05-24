@@ -87,7 +87,7 @@ export const DemoForm = (): JSX.Element => {
     companyLinkedinUrl:"",
     jobTitle:""
   });
- const successMessage = "Thanks for completing the form, we will reach out shortly."
+ const successMessage = "Thanks for completing the form, we will reach out via email shortly. If you do not see  any email, please check your Spam folder."
  const errorMessage = "Something went wrong when submitting the form. If the problem persists, reach out to hello@zelt.app"
  
  const dir = window.innerWidth >=500 ? "row":"column"
