@@ -370,9 +370,9 @@ export const DemoForm = (): JSX.Element => {
           inputState.companyLinkedinUrl = e.target.value 
           setInputs({...inputState})
         }}
-        onMouseEnter={() => setTooltipOpen(true)}
-        onClick={() => setTooltipOpen(false)}
-        onMouseLeave={() => setTooltipOpen(false)}
+        // onMouseEnter={() => setTooltipOpen(true)}
+        // onClick={() => setTooltipOpen(false)}
+        // onMouseLeave={() => setTooltipOpen(false)}
         value={inputState.companyLinkedinUrl}
          InputProps={{
           style: {color: 'black'},
