@@ -522,9 +522,9 @@ export const DemoForm = (): JSX.Element => {
           if(errorRes['errors']) {
             const error = errorRes['errors'][0]
             const message = error['message']
-            setSubMessage(message)
+            setSubMessage(await res.text()) //message
           } else {          
-            setSubMessage(errorMessage)
+            setSubMessage(await res.text())//error message
           }
         }
         
