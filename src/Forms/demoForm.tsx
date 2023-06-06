@@ -508,15 +508,17 @@ export const DemoForm = (): JSX.Element => {
             'Content-Type':'application/json'
           }
         })
-       
+        console.log(res)
         if (res.status === 200) {
 
           window.parent.postMessage({type:"message",detail: { accountOpened: true, demoEmail: email, buttonName:cookie.get('buttonName')}},'https://zelt.app/demo/')
+          console.log(res.json())
           setSubMessage(successMessage)
           
 
         } else {
           const errorRes = await res.json()
+          console.log(errorRes)
           if(errorRes['errors']) {
             const error = errorRes['errors'][0]
             const message = error['message']
