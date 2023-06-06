@@ -474,7 +474,7 @@ export const DemoForm = (): JSX.Element => {
           {
             "objectTypeId": "0-1",
             "name": "demo_form_button_name",
-            "value": cookie.get("buttonName")
+            "value": cookie.get("buttonName") ? cookie.get("buttonName"):fallBackButtonName
           },
           {
             "objectTypeId":"0-1",
@@ -508,23 +508,23 @@ export const DemoForm = (): JSX.Element => {
             'Content-Type':'application/json'
           }
         })
-        console.log(res)
+        //console.log(res)
         if (res.status === 200) {
 
           window.parent.postMessage({type:"message",detail: { accountOpened: true, demoEmail: email, buttonName:cookie.get('buttonName')}},'https://zelt.app/demo/')
-          console.log(res.json())
+          //console.log(res.json())
           setSubMessage(successMessage)
           
 
         } else {
           const errorRes = await res.json()
-          console.log(errorRes)
+          //console.log(errorRes)
           if(errorRes['errors']) {
             const error = errorRes['errors'][0]
             const message = error['message']
-            setSubMessage(await res.text()) //message
+            setSubMessage(message) //message
           } else {          
-            setSubMessage(await res.text())//error message
+            setSubMessage(errorMessage)//error message
           }
         }
         
