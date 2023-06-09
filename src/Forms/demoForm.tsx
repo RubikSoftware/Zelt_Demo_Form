@@ -1,19 +1,18 @@
 
 
-import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Tooltip, Typography } from "@mui/material";
-import {countries,interestedIn,DemoInput, DemoErrors, InterestedIn,choices,fallBackButtonName} from "./variables"
+import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Typography } from "@mui/material";
+import {countries,interestedIn,DemoInput, DemoErrors, InterestedIn,fallBackButtonName} from "./variables"
 import React, { useState } from "react";
-import Cookies, { CookieSetOptions } from 'universal-cookie';
 
 export const DemoForm = (): JSX.Element => {
   //const [tooltipOpen, setTooltipOpen] = useState(false);
-  const cookie = new Cookies()
-  const choices = ['Open Account','Schedule Demo']
+  // const cookie = new Cookies()
+  // const choices = ['Open Account','Schedule Demo']
    
-  if (!cookie.get("buttonName")) {
+  // if (!cookie.get("buttonName")) {
 
-    cookie.set("buttonName",choices[Math.floor(Math.random() * choices.length)],{'maxAge': 604800,'path':"/",'sameSite':'none','secure':true} as CookieSetOptions)
-  }
+  //   cookie.set("buttonName",choices[Math.floor(Math.random() * choices.length)],{'maxAge': 604800,'path':"/",'sameSite':'none','secure':true} as CookieSetOptions)
+  // }
   const classes = {
     check:{
       '& .MuiSvgIcon-root':{
@@ -474,7 +473,7 @@ export const DemoForm = (): JSX.Element => {
           {
             "objectTypeId": "0-1",
             "name": "demo_form_button_name",
-            "value": cookie.get("buttonName") ? cookie.get("buttonName"):fallBackButtonName
+            "value": fallBackButtonName
           },
           {
             "objectTypeId":"0-1",
@@ -511,7 +510,7 @@ export const DemoForm = (): JSX.Element => {
         //console.log(res)
         if (res.status === 200) {
 
-          window.parent.postMessage({type:"message",detail: { accountOpened: true, demoEmail: email, buttonName:cookie.get('buttonName')}},'https://zelt.app/demo/')
+          window.parent.postMessage({type:"message",detail: { accountOpened: true, demoEmail: email, buttonName:fallBackButtonName}},'https://zelt.app/demo/')
           //console.log(res.json())
           setSubMessage(successMessage)
           
@@ -532,7 +531,7 @@ export const DemoForm = (): JSX.Element => {
             
           sx = {classes.Button}   
           >
-            {cookie.get("buttonName") ? cookie.get("buttonName") : fallBackButtonName}
+            {fallBackButtonName}
           
           </Button>
         <Typography sx = {{marginTop:subMessage!==""?"15px":"0px",color:subMessage===successMessage?"black":"red"}}>{subMessage}</Typography>

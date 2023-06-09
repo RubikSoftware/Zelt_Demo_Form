@@ -29,7 +29,7 @@ export interface DemoErrors {
     jobTitle:string,
 }
 export const choices = ['Open Account','Schedule Demo']
-export const fallBackButtonName = choices[Math.floor(Math.random()*choices.length)]
+export const fallBackButtonName = "Open Account"//choices[Math.floor(Math.random()*choices.length)]
 export interface InterestedIn {
     onboarding:string,
     hris:string,
